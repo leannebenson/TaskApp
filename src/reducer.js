@@ -20,15 +20,12 @@ const todosReducer = (state = initialState, action) => {
       });
       return { todos: newTodoList };
     }
-    case TOGGLE_TODO: {
-    }
-    case DELETE_TODO: {
-    }
-
+    case TOGGLE_TODO: 
+    case DELETE_TODO: 
+break;
     default:
       return state;
-  }
 };
+}
 
-export default todosReducer
-
+export default todosReducer;
