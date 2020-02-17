@@ -3,9 +3,11 @@ import "./index.css";
 import todosList from "./todos.json";
 import { Route, NavLink} from "react-router-dom";
 import TodoList from "./todolist";
-
+import { connect } from "react-redux";
 
 class App extends Component {
+  //this.state.todos - app component state
+  //this.props.todos - redux state
   state = {
     todos: todosList
   };
@@ -141,5 +143,13 @@ class App extends Component {
     );
   };
 };
+//this.props.todos
+const mapStateToProps = state => {
+  return {
+    todos: state.todos //array of todo objects
+  }
+};
+const mapDispatchToProps = state => {
 
-export default App;
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);

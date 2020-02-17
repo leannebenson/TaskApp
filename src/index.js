@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import {BrowserRouter} from "react-router-dom";
-import Redux from "redux";
+import { BrowserRouter } from "react-router-dom";
+import { createStore } from "redux";
 import todosReducer from "./reducer"
 import { Provider } from "react-redux"
 
-const store = Redux.createStore(todosReducer);
+const store = createStore(todosReducer);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -24,4 +24,4 @@ ReactDOM.render(
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-export default Redux;
+//export default Redux;
