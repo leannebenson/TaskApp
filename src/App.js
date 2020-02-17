@@ -4,7 +4,7 @@ import todosList from "./todos.json";
 import { Route, NavLink} from "react-router-dom";
 import TodoList from "./todolist";
 import { connect } from "react-redux";
-import { addTodo, clearCompletedTodos } from "./actions"
+import { addTodo, clearCompletedTodos, deleteTodo } from "./actions"
 
 class App extends Component {
   //this.state.todos - app component state
@@ -19,24 +19,11 @@ class App extends Component {
 
   handleDeleteTodo = (event, todoIdToDelete) => {
     console.log("Deleted");
-    const newToDoList = this.state.todos.filter(todo => {
-      if (todo.id === todoIdToDelete) {
-        return false;
-      }
-      return true;
-    });
-
-    this.setState({ todos: newToDoList });
+    this.props.deleteTodo(todoIdToDelete);
   };
-  handleToggleComplete = (event, todoIdToToggle) => {
-    const newTodos = this.state.todos.slice();
-    const newnewTodos = newTodos.map(todo => {
-      if (todo.id === todoIdToToggle) {
-        todo.completed = !todo.completed;
-      }
-      return todo;
-    });
-    this.setState({ todos: newnewTodos });
+  handleToggleComplete = event => {
+    //const newTodos = this.state.todos.slice();
+
   };
 
   handleAddToDo = event => {
@@ -138,6 +125,7 @@ const mapStateToProps = state => {
 //this.props.addTodo
 const mapDispatchToProps = {
   addTodo,
-  clearCompletedTodos
+  clearCompletedTodos,
+  deleteTodo
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
