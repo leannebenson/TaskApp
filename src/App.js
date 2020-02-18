@@ -17,16 +17,6 @@ class App extends Component {
     this.props.clearCompletedTodos()
   };
 
-  //handleDeleteTodo = (event, todoIdToDelete) => {
-  //  console.log("Deleted");
-  //  this.props.deleteTodo(todoIdToDelete);
-  //};
-  handleToggleComplete = (event, newTodos) => {
-    //const newTodos = this.state.todos.slice();
-    this.props.clearCompletedTodos()
-
-  };
-
   handleAddToDo = event => {
     if (event.key === "Enter") {
       this.props.addTodo(event.target.value);
@@ -46,40 +36,26 @@ class App extends Component {
             autoFocus
           />
         </header>
-        {/* / equals https://leanne_benson.gitlab.io/assessment-todo-app-pt2 */}
         <Route exact path="/">
           <TodoList
             todos={this.props.todos}
-            handleToggleComplete={this.handleToggleComplete}
-            //handleDeleteTodo={this.handleDeleteTodo}
-            //handleDeleteAllTodo={this.handleDeleteAllTodo}
           />
         </Route>
-        {/* /active equals https://leanne_benson.gitlab.io/assessment-todo-app-pt2/active*/}
         <Route exact path="/active">
           <TodoList
-            handleToggleComplete={this.handleToggleComplete}
-            //handleDeleteTodo={this.handleDeleteTodo}
             todos={this.props.todos.filter(todo => todo.completed === false)}
-            //handleDeleteAllTodo={this.handleDeleteAllTodo}
           />
         </Route>
-        {/* /completed equals https://leanne_benson.gitlab.io/assessment-todo-app-pt2/completed*/}
         <Route exact path="/completed">
           <TodoList
-            handleToggleComplete={this.handleToggleComplete}
-            //handleDeleteTodo={this.handleDeleteTodo}
             todos={this.props.todos.filter(todo => todo.completed === true)}
-            //handleDeleteAllTodo={this.handleDeleteAllTodo}
           />
         </Route>
         <footer className="footer">
-          {/* <!-- This should be `0 items left` by default --> */}
           <span className="todo-count">
             <strong>
               {
                 this.state.todos.filter(todo => {
-                  //return something true or false should show the amount left in todo list to be complted
                   if (todo.completed === true) {
                     return false;
                   }
@@ -117,16 +93,16 @@ class App extends Component {
     );
   };
 };
-//this.props.todos
+
 const mapStateToProps = state => {
   return {
-    todos: state.todos //array of todo objects
+    todos: state.todos 
   }
 };
-//this.props.addTodo
+
 const mapDispatchToProps = {
   addTodo,
   clearCompletedTodos,
- 
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

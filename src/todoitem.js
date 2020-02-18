@@ -10,7 +10,7 @@ class TodoItem extends React.Component {
             type="checkbox"
             checked={this.props.completed}
             onChange={event =>
-              this.props.handleToggleComplete(event, this.props.id)
+              this.props.handleToggleTodo(event, this.props.id)
             }
           />
           <label>{this.props.title}</label>

@@ -29,7 +29,7 @@ const todosReducer = (state = initialState, action) => {
             }
             return todo;
           });
-          return{ todos: newToDoList };
+          return { todos: newToDoList };
     }
     case DELETE_TODO: {
           const newToDoList = state.todos.filter(todo => {
