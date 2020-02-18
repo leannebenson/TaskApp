@@ -27,7 +27,7 @@ export const toggleTodo = (todoIdToToggle) => {
     };
 };
 
-export const deleteTodo = (todoIdToDelete) => {
+export const deleteTodo = todoIdToDelete => {
     return {
         type: DELETE_TODO,
         payload: todoIdToDelete
