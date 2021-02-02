@@ -19,7 +19,28 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.priorityHigh {
+  background-color: rosybrown;
+  border-radius: 25px;
+  border: 2px solid #c75723;
+  width: 110px;
+  height: 30px;
 
+}
+.priorityMed {
+  background-color: rgb(235, 165, 137);
+  border-radius: 25px;
+  border: 2px solid #f38609;
+  width: 110px;
+  height: 30px;
+}
+.priorityLow {
+  background-color: rgb(167, 245, 167);
+  border-radius: 25px;
+  border: 2px solid #59b823;
+  width: 110px;
+  height: 30px;
+}
 body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4em;

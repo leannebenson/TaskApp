@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+//import Datepicker from "./components/Datepicker";
 import "./index.css";
 import todosList from "./todos.json";
 import { Route, NavLink} from "react-router-dom";
@@ -40,6 +41,7 @@ class App extends Component {
           <TodoList
             todos={this.props.todos}
           />
+
         </Route>
         <Route exact path="/active">
           <TodoList

@@ -9,11 +9,14 @@ class TodoItem extends React.Component {
             className="toggle"
             type="checkbox"
             checked={this.props.completed}
-            onChange={event =>
+            onChange={(event) =>
               this.props.handleToggleTodo(event, this.props.id)
             }
           />
           <label>{this.props.title}</label>
+          <button className="priorityHigh">High</button>
+          <button className="priorityMed">Medium</button>
+          <button className="priorityLow">Low</button>
           <button className="destroy" onClick={this.props.handleDeleteTodo} />
         </div>
       </li>

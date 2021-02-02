@@ -7,20 +7,17 @@ class TodoList extends React.Component {
     return (
       <section className="main">
         <ul className="todo-list">
-          {this.props.todos.map(todo => (
+          {this.props.todos.map((todo) => (
             <TodoItem
               key={todo.id}
               title={todo.title}
               completed={todo.completed}
               id={todo.id}
-              handleToggleTodo={ event =>
-                this.props.toggleTodo(todo.id)
-              }
-              handleDeleteTodo={event =>
-                this.props.deleteTodo(todo.id)
-              }
+              handleToggleTodo={(event) => this.props.toggleTodo(todo.id)}
+              handleDeleteTodo={(event) => this.props.deleteTodo(todo.id)}
             />
           ))}
+
         </ul>
       </section>
     );
