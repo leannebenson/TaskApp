@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import Datepicker from "./components/Datepicker";
 import "./index.css";
 import todosList from "./todos.json";
 import { Route, NavLink} from "react-router-dom";

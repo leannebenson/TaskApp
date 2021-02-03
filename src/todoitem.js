@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState} from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class TodoItem extends React.Component {
+
+
   render() {
+  // function setSelectedDate() {
+  //   const [selectedDate, setDate] = useState(null);
+  // }
     return (
       <li className={this.props.completed ? "completed" : ""}>
         <div className="view">
@@ -14,10 +21,11 @@ class TodoItem extends React.Component {
             }
           />
           <label>{this.props.title}</label>
+          <button className="destroy" onClick={this.props.handleDeleteTodo} />
+          {/* <DatePicker /> */}
           <button className="priorityHigh">High</button>
           <button className="priorityMed">Medium</button>
           <button className="priorityLow">Low</button>
-          <button className="destroy" onClick={this.props.handleDeleteTodo} />
         </div>
       </li>
     );
